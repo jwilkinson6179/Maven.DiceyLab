@@ -2,9 +2,11 @@ public class Simulation {
     Dice gameDice;
     Integer totalRolls;
     Bins results;
+    Integer totalDice;
 
     Simulation(Integer numOfDies, Integer numberOfThrows)
     {
+        totalDice = numOfDies;
         gameDice = new Dice(numOfDies);
         totalRolls = numberOfThrows;
         results = new Bins(numOfDies, numOfDies * 6);
