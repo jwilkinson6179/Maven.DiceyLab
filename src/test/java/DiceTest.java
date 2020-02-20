@@ -36,15 +36,6 @@ public class DiceTest {
     }
 
     @Test
-    public void MillionResult()
-    {
-        Simulation testSim = new Simulation(2, 1000000);
-        testSim.runSimulation();
-        testSim.printResults();
-
-    }
-
-    @Test
     @Parameters({
             "2, 6, 40, 7",
             "2, 6, 40, 7",
