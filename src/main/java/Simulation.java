@@ -21,15 +21,23 @@ public class Simulation {
     public void printResults()
     {
         StringBuilder graph = new StringBuilder();
-
-//        2 :    27917: 0.03 **
+        Integer graphBarUnit = totalRolls / 100;
 
         for(Integer i = 2; i <= 12; i++)
         {
-            Integer barWidth = results.getBin(i)/totalRolls;
+            StringBuilder bar = new StringBuilder();
+            Integer barWidth = results.getBin(i) / graphBarUnit;
 
-//            String.format("%2s :%10.0f, %4.2f, %s", i, results.getBin(i), (results.getBin(i) / totalRolls), graphBar);
+            for(int k = 1; k <= barWidth; k++)
+            {
+                bar.append("*");
+            }
+
+            Float percentage = (float)results.getBin(i) / (float) totalRolls;
+            String line = String.format("%2d :%10d: %4.2f %s\n", i, results.getBin(i),
+                    percentage, bar);
+            graph.append(line);
         }
-
+        System.out.println(graph.toString());
     }
 }
